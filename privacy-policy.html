@@ -38,6 +38,12 @@
             border-bottom: 2px solid #E8F5E9;
             padding-bottom: 8px;
         }
+        h3 {
+            color: #2E7D32;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
         p {
             margin-bottom: 15px;
         }
@@ -81,87 +87,307 @@
             color: #666;
             font-size: 0.9rem;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        table th {
+            background-color: #E8F5E9;
+            color: #1B5E20;
+            font-weight: 600;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective Date: January 31, 2026</p>
+        <p class="effective-date">Effective Date: February 6, 2026</p>
 
-        <p>Welcome to <span class="app-name">HisabMaster</span> ("we," "our," or "us"). This Privacy Policy explains how we handle your information when you use our mobile application.</p>
+        <p>Welcome to <span class="app-name">HisabMaster</span> (Package: com.codeinherit.hisabmaster), developed by CodeInherit ("we," "our," or "us"). This Privacy Policy explains how we handle your information when you use our mobile application.</p>
 
         <div class="highlight">
-            <strong>Summary:</strong> HisabMaster is a personal finance management app that stores all your data locally on your device. We do not collect, transmit, or store any of your personal or financial data on external servers.
+            <strong>Summary:</strong> HisabMaster is an offline personal finance management app that stores all your data locally on your device. We do not collect, transmit, or store any of your personal or financial data on external servers. The app does not require internet access, contains no advertising or analytics SDKs, and does not track you in any way.
         </div>
 
-        <h2>1. Information We Collect</h2>
-        <p><span class="app-name">HisabMaster</span> is designed with your privacy in mind. The app allows you to track:</p>
-        <ul>
-            <li>Income and expense transactions</li>
-            <li>Account balances (Cash, Bank, Credit Card, Savings)</li>
-            <li>Budget information</li>
-            <li>Categories and tags for transactions</li>
-            <li>Recurring transaction schedules</li>
-        </ul>
-        <p><strong>Important:</strong> All this information is stored locally on your device only. We do not have access to any of your financial data.</p>
+        <h2>1. App Overview</h2>
+        <p><span class="app-name">HisabMaster</span> is a comprehensive personal finance tracker that helps you manage your income, expenses, budgets, loans, and financial reports. The app supports English and Bengali (বাংলা) languages and is designed to work entirely offline.</p>
 
-        <h2>2. Data Storage</h2>
-        <p>All data you enter into <span class="app-name">HisabMaster</span> is stored locally on your device using secure database storage. This means:</p>
+        <h2>2. Information We Collect</h2>
+        <p><span class="app-name">HisabMaster</span> is designed with your privacy as a core principle. <strong>We do not collect any data from you.</strong> All information you enter into the app remains on your device under your full control.</p>
+
+        <h3>2.1 Data You Enter</h3>
+        <p>The app allows you to store the following types of information locally on your device:</p>
         <ul>
-            <li>Your data never leaves your device unless you explicitly export it</li>
+            <li><strong>Accounts:</strong> Account names, types (Cash, Bank, Credit Card, Wallet), balances, and currency preferences</li>
+            <li><strong>Transactions:</strong> Income, expense, and transfer records including amounts, dates, descriptions, and notes</li>
+            <li><strong>Categories:</strong> Income and expense categories with custom names and icons</li>
+            <li><strong>Budgets:</strong> Budget targets with daily, weekly, monthly, or yearly periods and alert thresholds</li>
+            <li><strong>Recurring Transactions:</strong> Scheduled transaction templates with recurrence intervals</li>
+            <li><strong>Loans:</strong> Records of lent and borrowed amounts, including status and settlement history</li>
+            <li><strong>People/Contacts:</strong> Names, phone numbers (optional), and email addresses (optional) of people involved in loan transactions</li>
+            <li><strong>Tags:</strong> Custom labels for organizing transactions</li>
+        </ul>
+
+        <h3>2.2 App Preferences</h3>
+        <p>The app stores your preferences locally, including:</p>
+        <ul>
+            <li>Selected language (English or Bengali)</li>
+            <li>Currency preference (default: BDT)</li>
+            <li>Dark mode setting</li>
+            <li>Theme color preference</li>
+            <li>Notification and budget alert preferences</li>
+            <li>Default account selections</li>
+        </ul>
+
+        <h3>2.3 What We Do NOT Collect</h3>
+        <p>We want to be clear about what we do <strong>not</strong> collect:</p>
+        <ul>
+            <li>No personal identification information (government IDs, social security numbers)</li>
+            <li>No banking credentials, credit card numbers, or PINs</li>
+            <li>No location or GPS data</li>
+            <li>No device identifiers or advertising IDs</li>
+            <li>No usage analytics or behavioral data</li>
+            <li>No photos, camera data, or biometric data</li>
+            <li>No contact list or calendar data</li>
+            <li>No health or medical information</li>
+        </ul>
+
+        <h2>3. Data Storage and Security</h2>
+        <p>All data you enter into <span class="app-name">HisabMaster</span> is stored locally on your device using Android's secure private storage:</p>
+        <ul>
+            <li><strong>Local Database:</strong> Financial data is stored in a local SQLite database (via Android Room) within the app's private storage, inaccessible to other apps</li>
+            <li><strong>Local Preferences:</strong> App settings are stored using Android DataStore in the app's private storage</li>
+            <li>Your data never leaves your device unless you explicitly choose to export or backup</li>
             <li>We cannot access, view, or retrieve your financial information</li>
-            <li>Your data is as secure as your device itself</li>
+            <li>Your data is protected by your device's built-in security measures (screen lock, encryption)</li>
+            <li>Uninstalling the app will permanently delete all stored data</li>
         </ul>
 
-        <h2>3. Data Export</h2>
-        <p>The app provides export functionality that allows you to:</p>
+        <h2>4. App Features and Data Usage</h2>
+        <p>Here is how each feature uses your locally stored data:</p>
+
+        <table>
+            <tr>
+                <th>Feature</th>
+                <th>Data Used</th>
+                <th>Purpose</th>
+            </tr>
+            <tr>
+                <td>Dashboard</td>
+                <td>Accounts, Transactions</td>
+                <td>Display total balance, recent transactions, and financial summary</td>
+            </tr>
+            <tr>
+                <td>Transactions</td>
+                <td>Transactions, Accounts, Categories, Tags</td>
+                <td>Record and view income, expenses, and transfers</td>
+            </tr>
+            <tr>
+                <td>Accounts</td>
+                <td>Accounts, Transactions</td>
+                <td>Manage financial accounts and track balances</td>
+            </tr>
+            <tr>
+                <td>Categories</td>
+                <td>Categories</td>
+                <td>Organize transactions by custom or default categories</td>
+            </tr>
+            <tr>
+                <td>Budgets</td>
+                <td>Budgets, Transactions, Categories</td>
+                <td>Set spending limits and track budget usage</td>
+            </tr>
+            <tr>
+                <td>Reports</td>
+                <td>Transactions, Accounts, Categories</td>
+                <td>Generate visual charts and financial analytics</td>
+            </tr>
+            <tr>
+                <td>Recurring Transactions</td>
+                <td>Recurring Transactions, Accounts, Categories</td>
+                <td>Automate regular transaction entries</td>
+            </tr>
+            <tr>
+                <td>Loans</td>
+                <td>Loans, People, Settlements, Accounts</td>
+                <td>Track money lent to or borrowed from others</td>
+            </tr>
+            <tr>
+                <td>Export</td>
+                <td>Transactions, Accounts, Categories</td>
+                <td>Export data to CSV or PDF files on your device</td>
+            </tr>
+            <tr>
+                <td>Backup &amp; Restore</td>
+                <td>Entire database</td>
+                <td>Create and restore full data backups</td>
+            </tr>
+        </table>
+
+        <h2>5. Data Export and Backup</h2>
+        <p>The app provides several ways to export and backup your data, all under your control:</p>
+
+        <h3>5.1 CSV Export</h3>
+        <p>Export your transactions to CSV (Comma-Separated Values) format, including date, type, amount, category, account, description, and notes. Files are saved to your device's storage.</p>
+
+        <h3>5.2 PDF Export</h3>
+        <p>Generate formatted PDF reports of your transactions with summaries of total income, expenses, and net balance. Files are saved to your device's storage.</p>
+
+        <h3>5.3 Full Database Backup</h3>
+        <p>Create a complete backup of your entire database, including all accounts, transactions, categories, budgets, loans, and settings. Backup files include metadata such as app version and record counts for verification during restore.</p>
+
+        <h3>5.4 Restore from Backup</h3>
+        <p>Restore your data from a previously created backup file. The app shows a preview of the backup contents before you confirm the restore operation.</p>
+
+        <p><strong>Important:</strong> All exported and backup files are saved to your device and are under your full control. We do not receive copies of any exported or backup files.</p>
+
+        <h2>6. Device Permissions</h2>
+        <p><span class="app-name">HisabMaster</span> requests only the minimum permissions necessary for its functionality:</p>
+
+        <table>
+            <tr>
+                <th>Permission</th>
+                <th>Purpose</th>
+                <th>Required</th>
+            </tr>
+            <tr>
+                <td>POST_NOTIFICATIONS</td>
+                <td>Send budget alerts when spending approaches your set limits, and recurring transaction reminders</td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td>RECEIVE_BOOT_COMPLETED</td>
+                <td>Reschedule background tasks (budget checks and recurring transactions) after your device restarts</td>
+                <td>Automatic</td>
+            </tr>
+            <tr>
+                <td>WRITE_EXTERNAL_STORAGE</td>
+                <td>Save exported CSV, PDF, and backup files to device storage (only on Android 8 and below)</td>
+                <td>Legacy only</td>
+            </tr>
+            <tr>
+                <td>READ_EXTERNAL_STORAGE</td>
+                <td>Read backup files for restore functionality (only on Android 12 and below)</td>
+                <td>Legacy only</td>
+            </tr>
+        </table>
+
+        <p><strong>Permissions we do NOT request:</strong></p>
         <ul>
-            <li>Export transactions to CSV format</li>
-            <li>Export reports to PDF format</li>
+            <li>No INTERNET permission &mdash; the app works entirely offline</li>
+            <li>No CAMERA or MICROPHONE access</li>
+            <li>No LOCATION or GPS access</li>
+            <li>No CONTACTS or CALENDAR access</li>
+            <li>No PHONE or SMS access</li>
+            <li>No BLUETOOTH or NFC access</li>
         </ul>
-        <p>These exports are saved to your device's storage and are under your full control. We do not receive copies of any exported files.</p>
 
-        <h2>4. Device Permissions</h2>
-        <p><span class="app-name">HisabMaster</span> may request the following permissions:</p>
+        <h2>7. Background Services</h2>
+        <p>The app uses Android WorkManager to run two background tasks that operate entirely offline:</p>
         <ul>
-            <li><strong>Storage Access:</strong> To save exported CSV and PDF files to your device</li>
-            <li><strong>Notifications:</strong> To send you budget alerts and recurring transaction reminders</li>
+            <li><strong>Recurring Transaction Processing:</strong> Runs once daily to automatically create transactions based on your recurring transaction schedules. No network access is used.</li>
+            <li><strong>Budget Alert Checks:</strong> Runs every 6 hours to check your spending against your budget limits and send local notifications when spending approaches your alert threshold (default: 80%). No network access is used.</li>
         </ul>
-        <p>These permissions are used solely for the stated purposes and do not involve transmitting data externally.</p>
+        <p>Both tasks run entirely on your device, require no internet connection, and only access your locally stored data.</p>
 
-        <h2>5. Data Backup</h2>
-        <p>If you use Android's built-in backup feature (Google Backup), your app data may be included in your device backup according to your device settings. This backup is managed by Google and is subject to Google's privacy policy.</p>
+        <h2>8. Third-Party Services and SDKs</h2>
+        <p><span class="app-name">HisabMaster</span> does <strong>not</strong> integrate with any:</p>
+        <ul>
+            <li>Analytics services (e.g., Google Analytics, Firebase Analytics)</li>
+            <li>Advertising networks (e.g., Google AdMob, Facebook Ads)</li>
+            <li>Crash reporting services (e.g., Crashlytics, Sentry)</li>
+            <li>Social media SDKs</li>
+            <li>Cloud storage or synchronization services</li>
+            <li>Any other third-party tracking or data collection services</li>
+        </ul>
+        <p>The app uses only standard Android libraries for its user interface, local database, and background processing. No data is shared with any third parties.</p>
 
-        <h2>6. Third-Party Services</h2>
-        <p><span class="app-name">HisabMaster</span> does not integrate with any third-party analytics, advertising, or tracking services. We do not share your data with any third parties.</p>
+        <h2>9. Internet Usage</h2>
+        <p><span class="app-name">HisabMaster</span> does <strong>not</strong> use or require an internet connection. The app does not request the INTERNET permission and all features work completely offline. No data is ever transmitted from the app to any server.</p>
 
-        <h2>7. Children's Privacy</h2>
-        <p>Our app does not knowingly collect information from children under 13. The app is intended for general audiences who want to manage their personal finances.</p>
+        <h2>10. Android Auto Backup</h2>
+        <p>If you have Android's built-in backup feature enabled on your device (Google Backup), your app data &mdash; including your local database and preferences &mdash; may be automatically backed up to your Google account. This backup is:</p>
+        <ul>
+            <li>Managed entirely by the Android operating system and Google</li>
+            <li>Subject to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a></li>
+            <li>Under your control through your device's backup settings</li>
+            <li>Used for restoring your data when you set up a new device or reinstall the app</li>
+        </ul>
+        <p>You can disable this feature in your device's Settings > System > Backup.</p>
 
-        <h2>8. Data Security</h2>
+        <h2>11. Data Retention</h2>
         <p>Since all data is stored locally on your device:</p>
         <ul>
-            <li>Your financial data is protected by your device's security measures (PIN, fingerprint, face unlock)</li>
-            <li>We recommend keeping your device secure and updated</li>
-            <li>Uninstalling the app will delete all stored data</li>
+            <li>Your data is retained indefinitely until you choose to delete it</li>
+            <li>You can delete individual transactions, accounts, categories, loans, or other records at any time within the app</li>
+            <li>Uninstalling the app permanently deletes all app data from your device</li>
+            <li>Factory resetting your device will also remove all app data</li>
+            <li>We have no ability to retain, access, or recover your data</li>
         </ul>
 
-        <h2>9. Your Rights</h2>
-        <p>You have full control over your data:</p>
+        <h2>12. Data Security</h2>
+        <p>Your data is protected through multiple layers of device-level security:</p>
         <ul>
-            <li><strong>Access:</strong> View all your data within the app at any time</li>
-            <li><strong>Export:</strong> Export your data using the built-in export feature</li>
-            <li><strong>Delete:</strong> Delete individual entries or uninstall the app to remove all data</li>
+            <li><strong>App Sandboxing:</strong> Android isolates each app's private data, preventing other apps from accessing your HisabMaster data</li>
+            <li><strong>Device Encryption:</strong> On supported devices, your data is encrypted at rest by the Android operating system</li>
+            <li><strong>Device Lock:</strong> Your financial data is protected by your device's security measures (PIN, pattern, fingerprint, face unlock)</li>
+            <li><strong>No Network Exposure:</strong> Since the app operates offline, your data is never exposed to network-based threats</li>
+        </ul>
+        <p>We recommend keeping your device's operating system and security features up to date, and using a strong screen lock to protect your data.</p>
+
+        <h2>13. Children's Privacy</h2>
+        <p><span class="app-name">HisabMaster</span> is not directed at children under the age of 13. The app is intended for general audiences who want to manage their personal finances. Since no data is collected or transmitted by the app, we do not knowingly collect personal information from children or any other users.</p>
+
+        <h2>14. Your Rights and Data Control</h2>
+        <p>You have complete control over all your data:</p>
+        <ul>
+            <li><strong>Access:</strong> View all your financial data within the app at any time</li>
+            <li><strong>Modify:</strong> Edit any transaction, account, category, budget, loan, or other record</li>
+            <li><strong>Export:</strong> Export your data to CSV or PDF files, or create full database backups at any time</li>
+            <li><strong>Delete:</strong> Delete individual entries or entire categories of data within the app</li>
+            <li><strong>Erase All:</strong> Uninstall the app to permanently remove all data</li>
+            <li><strong>Portability:</strong> Use the export and backup features to take your data with you</li>
+        </ul>
+        <p>Since we do not collect or store your data, there is no need to submit data access or deletion requests to us. You can exercise all these rights directly within the app.</p>
+
+        <h2>15. Compliance</h2>
+        <p>While <span class="app-name">HisabMaster</span> does not collect personal data, we are committed to respecting the principles of applicable data protection regulations including:</p>
+        <ul>
+            <li><strong>GDPR (General Data Protection Regulation):</strong> No personal data is collected or processed by us</li>
+            <li><strong>CCPA (California Consumer Privacy Act):</strong> No personal information is sold or shared with third parties</li>
+            <li><strong>Google Play Developer Policies:</strong> The app complies with Google Play's data safety requirements</li>
         </ul>
 
-        <h2>10. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Any changes will be reflected with a new "Effective Date" at the top of this page. We encourage you to review this policy periodically.</p>
+        <h2>16. Open Source Libraries</h2>
+        <p>The app uses the following open source libraries solely for local functionality. None of these libraries transmit data externally:</p>
+        <ul>
+            <li>Android Jetpack (Room, Compose, WorkManager, DataStore, Navigation)</li>
+            <li>Hilt &mdash; Dependency injection</li>
+            <li>Kotlin Coroutines &mdash; Asynchronous processing</li>
+            <li>Gson &mdash; JSON serialization for backup files</li>
+            <li>OpenCSV &mdash; CSV file generation</li>
+            <li>iTextPDF &mdash; PDF report generation</li>
+            <li>MPAndroidChart &mdash; Financial charts and graphs</li>
+        </ul>
 
-        <h2>11. Contact Us</h2>
+        <h2>17. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in the app's features or applicable regulations. Any changes will be reflected with a new "Effective Date" at the top of this page. We encourage you to review this policy periodically. If we make significant changes, we will notify users through the app or the app's store listing.</p>
+
+        <h2>18. Contact Us</h2>
         <div class="contact-info">
-            <p>If you have any questions or concerns about this Privacy Policy or the app, please contact us at:</p>
+            <p>If you have any questions, concerns, or feedback about this Privacy Policy or the app, please contact us at:</p>
             <p><strong>Email:</strong> <a href="mailto:s.anwar369@gmail.com">s.anwar369@gmail.com</a></p>
             <p><strong>Developer:</strong> CodeInherit</p>
+            <p>We are committed to resolving any concerns about your privacy and will respond to your inquiries promptly.</p>
         </div>
 
         <footer>
