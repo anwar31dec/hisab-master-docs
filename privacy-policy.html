@@ -110,16 +110,16 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="effective-date">Effective Date: February 6, 2026</p>
+        <p class="effective-date">Effective Date: February 7, 2026</p>
 
         <p>Welcome to <span class="app-name">Hisab Master</span> (Package: com.codeinherit.hisabmaster), developed by CodeInherit ("we," "our," or "us"). This Privacy Policy explains how we handle your information when you use our mobile application.</p>
 
         <div class="highlight">
-            <strong>Summary:</strong> Hisab Master is an offline personal finance management app that stores all your data locally on your device. We do not collect, transmit, or store any of your personal or financial data on external servers. The app does not require internet access, contains no advertising or analytics SDKs, and does not track you in any way.
+            <strong>Summary:</strong> Hisab Master is an offline personal finance management app that stores all your data locally on your device. We do not collect, transmit, or store any of your personal or financial data on external servers. The app includes optional features such as receipt scanning (using on-device OCR) and app lock (PIN/biometric authentication), all of which process data entirely on your device. The app contains no advertising or analytics SDKs, and does not track you in any way.
         </div>
 
         <h2>1. App Overview</h2>
-        <p><span class="app-name">Hisab Master</span> is a comprehensive personal finance tracker that helps you manage your income, expenses, budgets, loans, and financial reports. The app supports English and Bengali (বাংলা) languages and is designed to work entirely offline.</p>
+        <p><span class="app-name">Hisab Master</span> is a comprehensive personal finance tracker that helps you manage your income, expenses, budgets, loans, and financial reports. The app includes features such as receipt scanning for quick transaction entry, app lock for security, advanced transaction filtering, and recurring transaction alerts. The app supports English and Bengali (বাংলা) languages and is designed to work entirely offline.</p>
 
         <h2>2. Information We Collect</h2>
         <p><span class="app-name">Hisab Master</span> is designed with your privacy as a core principle. <strong>We do not collect any data from you.</strong> All information you enter into the app remains on your device under your full control.</p>
@@ -135,6 +135,7 @@
             <li><strong>Loans:</strong> Records of lent and borrowed amounts, including status and settlement history</li>
             <li><strong>People/Contacts:</strong> Names, phone numbers (optional), and email addresses (optional) of people involved in loan transactions</li>
             <li><strong>Tags:</strong> Custom labels for organizing transactions</li>
+            <li><strong>Receipt Scans:</strong> When you use the receipt scanning feature, the app captures images using your device's camera and processes them on-device using optical character recognition (OCR) to extract transaction details such as amounts, dates, and merchant names. Receipt images are processed locally and are not stored or transmitted externally.</li>
         </ul>
 
         <h3>2.2 App Preferences</h3>
@@ -144,8 +145,10 @@
             <li>Currency preference (default: BDT)</li>
             <li>Dark mode setting</li>
             <li>Theme color preference</li>
-            <li>Notification and budget alert preferences</li>
+            <li>Notification, budget alert, and recurring transaction alert preferences</li>
             <li>Default account selections</li>
+            <li>App lock settings (enabled/disabled, biometric preference)</li>
+            <li>App lock PIN stored as an irreversible SHA-256 hash (the original PIN cannot be recovered)</li>
         </ul>
 
         <h3>2.3 What We Do NOT Collect</h3>
@@ -156,7 +159,8 @@
             <li>No location or GPS data</li>
             <li>No device identifiers or advertising IDs</li>
             <li>No usage analytics or behavioral data</li>
-            <li>No photos, camera data, or biometric data</li>
+            <li>No photos or camera data (receipt images are processed on-device and not stored permanently)</li>
+            <li>No biometric data (the app uses Android's BiometricPrompt API for authentication, but biometric data such as fingerprints or face scans are handled entirely by the Android operating system and are never accessed or stored by the app)</li>
             <li>No contact list or calendar data</li>
             <li>No health or medical information</li>
         </ul>
@@ -222,6 +226,21 @@
                 <td>Track money lent to or borrowed from others</td>
             </tr>
             <tr>
+                <td>Receipt Scanning</td>
+                <td>Camera images (temporary)</td>
+                <td>Capture and process receipt images on-device using OCR to auto-fill transaction details</td>
+            </tr>
+            <tr>
+                <td>App Lock</td>
+                <td>PIN hash, Biometric preference</td>
+                <td>Secure app access with PIN and/or biometric authentication</td>
+            </tr>
+            <tr>
+                <td>Advanced Filtering</td>
+                <td>Transactions, Categories</td>
+                <td>Filter transactions by date range, amount range, categories, and transaction type</td>
+            </tr>
+            <tr>
                 <td>Export</td>
                 <td>Transactions, Accounts, Categories</td>
                 <td>Export data to CSV or PDF files on your device</td>
@@ -250,7 +269,26 @@
 
         <p><strong>Important:</strong> All exported and backup files are saved to your device and are under your full control. We do not receive copies of any exported or backup files.</p>
 
-        <h2>6. Device Permissions</h2>
+        <h2>6. Receipt Scanning</h2>
+        <p>The app includes an optional receipt scanning feature that uses your device's camera to capture receipt images and extract transaction details automatically.</p>
+        <ul>
+            <li><strong>Camera Access:</strong> The app requests camera permission only when you choose to scan a receipt. You can deny this permission and continue using all other app features.</li>
+            <li><strong>On-Device Processing:</strong> Receipt images are processed entirely on your device using Google ML Kit's text recognition (OCR) technology. No images or extracted text are sent to external servers.</li>
+            <li><strong>Data Extraction:</strong> The OCR engine extracts transaction-relevant details such as total amount, date, and merchant name. This extracted data is used to pre-fill the transaction form for your review before saving.</li>
+            <li><strong>No Image Storage:</strong> Receipt images are processed in memory and are not permanently stored by the app.</li>
+            <li><strong>ML Kit Model:</strong> Google ML Kit may download text recognition model files to your device when the feature is first used. This download does not involve transmitting any of your personal or financial data.</li>
+        </ul>
+
+        <h2>7. App Lock (PIN &amp; Biometric Authentication)</h2>
+        <p>Hisab Master offers an optional app-level security feature to protect your financial data from unauthorized access:</p>
+        <ul>
+            <li><strong>PIN Lock:</strong> You can set a 4-digit PIN to lock the app. The PIN is stored as an irreversible SHA-256 cryptographic hash in the app's local preferences. The original PIN cannot be recovered from this hash.</li>
+            <li><strong>Biometric Authentication:</strong> You can optionally enable fingerprint or face unlock as an alternative to entering your PIN. Biometric authentication is handled entirely by the Android operating system via the BiometricPrompt API. The app never accesses, processes, or stores your biometric data &mdash; it only receives a success or failure result from the system.</li>
+            <li><strong>Auto-Lock:</strong> The app automatically locks when moved to the background, requiring authentication to regain access.</li>
+            <li><strong>Local Only:</strong> All authentication data (PIN hash, lock preferences) is stored locally on your device and is never transmitted externally.</li>
+        </ul>
+
+        <h2>8. Device Permissions</h2>
         <p><span class="app-name">Hisab Master</span> requests only the minimum permissions necessary for its functionality:</p>
 
         <table>
@@ -260,8 +298,18 @@
                 <th>Required</th>
             </tr>
             <tr>
+                <td>CAMERA</td>
+                <td>Capture receipt images for on-device OCR processing to auto-fill transaction details. Images are processed locally and not stored permanently or transmitted externally.</td>
+                <td>Optional</td>
+            </tr>
+            <tr>
+                <td>USE_BIOMETRIC</td>
+                <td>Enable biometric authentication (fingerprint/face) for the optional app lock feature. Biometric data is handled entirely by the Android operating system; the app only receives authentication results.</td>
+                <td>Optional</td>
+            </tr>
+            <tr>
                 <td>POST_NOTIFICATIONS</td>
-                <td>Send budget alerts when spending approaches your set limits, and recurring transaction reminders</td>
+                <td>Send budget alerts when spending approaches your set limits, recurring transaction reminders for upcoming scheduled transactions, and overdue loan alerts</td>
                 <td>Optional</td>
             </tr>
             <tr>
@@ -284,22 +332,23 @@
         <p><strong>Permissions we do NOT request:</strong></p>
         <ul>
             <li>No INTERNET permission &mdash; the app works entirely offline</li>
-            <li>No CAMERA or MICROPHONE access</li>
+            <li>No MICROPHONE access</li>
             <li>No LOCATION or GPS access</li>
             <li>No CONTACTS or CALENDAR access</li>
             <li>No PHONE or SMS access</li>
             <li>No BLUETOOTH or NFC access</li>
         </ul>
 
-        <h2>7. Background Services</h2>
-        <p>The app uses Android WorkManager to run two background tasks that operate entirely offline:</p>
+        <h2>9. Background Services</h2>
+        <p>The app uses Android WorkManager to run three background tasks that operate entirely offline:</p>
         <ul>
             <li><strong>Recurring Transaction Processing:</strong> Runs once daily to automatically create transactions based on your recurring transaction schedules. No network access is used.</li>
             <li><strong>Budget Alert Checks:</strong> Runs every 6 hours to check your spending against your budget limits and send local notifications when spending approaches your alert threshold (default: 80%). No network access is used.</li>
+            <li><strong>Recurring Transaction Reminders:</strong> Runs periodically to check for upcoming recurring transactions within the next 24 hours and sends local notifications to remind you. This feature can be enabled or disabled in Settings. No network access is used.</li>
         </ul>
-        <p>Both tasks run entirely on your device, require no internet connection, and only access your locally stored data.</p>
+        <p>All tasks run entirely on your device, require no internet connection, and only access your locally stored data.</p>
 
-        <h2>8. Third-Party Services and SDKs</h2>
+        <h2>10. Third-Party Services and SDKs</h2>
         <p><span class="app-name">Hisab Master</span> does <strong>not</strong> integrate with any:</p>
         <ul>
             <li>Analytics services (e.g., Google Analytics, Firebase Analytics)</li>
@@ -309,12 +358,12 @@
             <li>Cloud storage or synchronization services</li>
             <li>Any other third-party tracking or data collection services</li>
         </ul>
-        <p>The app uses only standard Android libraries for its user interface, local database, and background processing. No data is shared with any third parties.</p>
+        <p>The app uses Google ML Kit for on-device text recognition (OCR) in the receipt scanning feature. ML Kit processes images entirely on your device; no image data or OCR results are sent to Google or any external server. ML Kit may download text recognition model files to your device, but this does not involve transmitting any of your personal or financial data. Apart from ML Kit, the app uses only standard Android libraries for its user interface, local database, and background processing. No data is shared with any third parties.</p>
 
-        <h2>9. Internet Usage</h2>
-        <p><span class="app-name">Hisab Master</span> does <strong>not</strong> use or require an internet connection. The app does not request the INTERNET permission and all features work completely offline. No data is ever transmitted from the app to any server.</p>
+        <h2>11. Internet Usage</h2>
+        <p><span class="app-name">Hisab Master</span> does <strong>not</strong> require an internet connection for its core functionality. All features work completely offline. No personal, financial, or usage data is ever transmitted from the app to any server. The receipt scanning feature uses Google ML Kit for on-device text recognition, which may download machine learning model files to your device when first used. This model download does not involve transmitting any of your data &mdash; it only retrieves the model needed for local processing.</p>
 
-        <h2>10. Android Auto Backup</h2>
+        <h2>12. Android Auto Backup</h2>
         <p>If you have Android's built-in backup feature enabled on your device (Google Backup), your app data &mdash; including your local database and preferences &mdash; may be automatically backed up to your Google account. This backup is:</p>
         <ul>
             <li>Managed entirely by the Android operating system and Google</li>
@@ -324,7 +373,7 @@
         </ul>
         <p>You can disable this feature in your device's Settings > System > Backup.</p>
 
-        <h2>11. Data Retention</h2>
+        <h2>13. Data Retention</h2>
         <p>Since all data is stored locally on your device:</p>
         <ul>
             <li>Your data is retained indefinitely until you choose to delete it</li>
@@ -334,20 +383,21 @@
             <li>We have no ability to retain, access, or recover your data</li>
         </ul>
 
-        <h2>12. Data Security</h2>
+        <h2>14. Data Security</h2>
         <p>Your data is protected through multiple layers of device-level security:</p>
         <ul>
             <li><strong>App Sandboxing:</strong> Android isolates each app's private data, preventing other apps from accessing your Hisab Master data</li>
             <li><strong>Device Encryption:</strong> On supported devices, your data is encrypted at rest by the Android operating system</li>
             <li><strong>Device Lock:</strong> Your financial data is protected by your device's security measures (PIN, pattern, fingerprint, face unlock)</li>
+            <li><strong>In-App Lock:</strong> Hisab Master offers an optional app-level lock using a 4-digit PIN and/or biometric authentication (fingerprint/face). The PIN is stored as an irreversible SHA-256 hash. Biometric verification is delegated to the Android operating system via BiometricPrompt; the app only receives a success or failure response and never accesses or stores raw biometric data. The app automatically locks when moved to the background.</li>
             <li><strong>No Network Exposure:</strong> Since the app operates offline, your data is never exposed to network-based threats</li>
         </ul>
         <p>We recommend keeping your device's operating system and security features up to date, and using a strong screen lock to protect your data.</p>
 
-        <h2>13. Children's Privacy</h2>
+        <h2>15. Children's Privacy</h2>
         <p><span class="app-name">Hisab Master</span> is not directed at children under the age of 13. The app is intended for general audiences who want to manage their personal finances. Since no data is collected or transmitted by the app, we do not knowingly collect personal information from children or any other users.</p>
 
-        <h2>14. Your Rights and Data Control</h2>
+        <h2>16. Your Rights and Data Control</h2>
         <p>You have complete control over all your data:</p>
         <ul>
             <li><strong>Access:</strong> View all your financial data within the app at any time</li>
@@ -359,7 +409,7 @@
         </ul>
         <p>Since we do not collect or store your data, there is no need to submit data access or deletion requests to us. You can exercise all these rights directly within the app.</p>
 
-        <h2>15. Compliance</h2>
+        <h2>17. Compliance</h2>
         <p>While <span class="app-name">Hisab Master</span> does not collect personal data, we are committed to respecting the principles of applicable data protection regulations including:</p>
         <ul>
             <li><strong>GDPR (General Data Protection Regulation):</strong> No personal data is collected or processed by us</li>
@@ -367,10 +417,12 @@
             <li><strong>Google Play Developer Policies:</strong> The app complies with Google Play's data safety requirements</li>
         </ul>
 
-        <h2>16. Open Source Libraries</h2>
-        <p>The app uses the following open source libraries solely for local functionality. None of these libraries transmit data externally:</p>
+        <h2>18. Open Source Libraries</h2>
+        <p>The app uses the following open source libraries solely for local functionality. None of these libraries transmit your personal or financial data externally:</p>
         <ul>
             <li>Android Jetpack (Room, Compose, WorkManager, DataStore, Navigation)</li>
+            <li>AndroidX Biometric &mdash; Biometric authentication for app lock (delegates to Android OS)</li>
+            <li>Google ML Kit Text Recognition &mdash; On-device OCR for receipt scanning (processes locally; may download model files)</li>
             <li>Hilt &mdash; Dependency injection</li>
             <li>Kotlin Coroutines &mdash; Asynchronous processing</li>
             <li>Gson &mdash; JSON serialization for backup files</li>
@@ -379,10 +431,10 @@
             <li>MPAndroidChart &mdash; Financial charts and graphs</li>
         </ul>
 
-        <h2>17. Changes to This Policy</h2>
+        <h2>19. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time to reflect changes in the app's features or applicable regulations. Any changes will be reflected with a new "Effective Date" at the top of this page. We encourage you to review this policy periodically. If we make significant changes, we will notify users through the app or the app's store listing.</p>
 
-        <h2>18. Contact Us</h2>
+        <h2>20. Contact Us</h2>
         <div class="contact-info">
             <p>If you have any questions, concerns, or feedback about this Privacy Policy or the app, please contact us at:</p>
             <p><strong>Email:</strong> <a href="mailto:s.anwar369@gmail.com">s.anwar369@gmail.com</a></p>
